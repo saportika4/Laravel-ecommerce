@@ -1,0 +1,111 @@
+.main-navbar{
+    border-bottom: 1px solid #ccc;
+}
+.main-navbar .top-navbar{
+    background-color: #2874f0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.main-navbar .top-navbar .brand-name{
+    color: #fff;
+}
+.main-navbar .top-navbar .nav-link{
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+}
+.main-navbar .top-navbar .dropdown-menu{
+    padding: 0px 0px;
+    border-radius: 0px;
+}
+.main-navbar .top-navbar .dropdown-menu .dropdown-item{
+    padding: 8px 16px;
+    border-bottom: 1px solid #ccc;
+    font-size: 14px;
+}
+.main-navbar .top-navbar .dropdown-menu .dropdown-item i{
+    width: 20px;
+    text-align: center;
+    color: #2874f0;
+    font-size: 14px;
+}
+.main-navbar .navbar{
+    padding: 0px;
+    background-color: #ddd;
+}
+.main-navbar .navbar .nav-item .nav-link{
+    padding: 8px 20px;
+    color: #000;
+    font-size: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+    .main-navbar .top-navbar .nav-link{
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+}
+
+/* Navbar end */
+
+.home-slide .slide-bg{
+    max-height: 90vh;
+    min-height: 90vh;
+    object-fit: cover;
+    object-position: top;
+}
+
+.product-default .category-img{
+    min-height: 300px;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.colorSelectionLabel{
+    color: #000;
+    padding: 2px 10px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.colorSelectionLabel:active{
+    background-color: #fff !important;
+    border: 2px solid #000;
+}
+
+.wishlist-btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 17px 8px;
+    color: #222529;
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: Poppins,sans-serif;
+    letter-spacing: -0.015em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    border-radius: 7px;
+}
+
+.whishlistbg {
+    background-color: #59b76c;
+}
+
+#whishlistbgRed{
+    background-color: #ff3f3f;
+}
+
+#whishlistbgRed:hover{
+    color: white;
+}
+
+.alertstyle1 {
+    background-color: #000;
+    color: white;
+    border-radius: 4px;
+    font-size: 16px;
+    border-radius: 4px;
+}
