@@ -101,7 +101,7 @@
                     <div class="dropdown cart-dropdown">
                         <a href="#" title="Cart" class="dropdown-toggle dropdown-arrow cart-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
                             <i class="minicart-icon"></i>
-                            <span class="cart-count badge-circle">3</span>
+                            <span class="cart-count badge-circle" style="background: #cb1919;"><livewire:frontend.cart.cart-count /></span>
                         </a>
 
                         <div class="cart-overlay"></div>

@@ -108,10 +108,9 @@
                                     <span class="btn btn1 quantitybtn" wire:click="incrementQuantity"><i class="fa fa-plus" style="color: black;"></i></span>
                                 </div>
 
-                                <a href="javascript:;" class="btn btn-dark add-cart mr-2" title="Add to Cart">Add to
-                                    Cart</a>
+                                <button type="button" wire:click="addToCart({{ $product->id }})" class="btn btn-dark add-cart mr-2" title="Add to Cart">Add to Cart</button>
 
-                                <a href="cart.html" class="btn btn-gray view-cart d-none">View cart</a>
+                                {{-- <a href="cart.html" class="btn btn-gray view-cart d-none">View cart</a> --}}
                             </div>
 
                             <hr class="divider mb-0 mt-0">
