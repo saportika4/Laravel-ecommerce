@@ -77,8 +77,9 @@
                                     <!-- End .price-box -->
 
                                     <div class="product-action">
-                                        <a href="" class="btn-icon-wish" title="wishlist"><i
-                                                class="icon-heart"></i></a>
+                                        <a href="#" wire:click="addToWishlist({{ $productsItems->id }})" class="btn-icon-wish" title="wishlist">
+                                            <i class="icon-heart"></i>
+                                        </a>
                                         <a href="#" class="btn-icon btn-add-cart product-type-simple"><i
                                                 class="icon-shopping-cart"></i>ADD TO CART</a>
                                         {{-- <a href="" class="btn-quickview" title="Quick View"><i class="fas fa-external-link-alt"></i></a> --}}

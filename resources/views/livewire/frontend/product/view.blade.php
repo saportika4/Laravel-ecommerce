@@ -61,8 +61,8 @@
                                         <ul class="config-swatch-list d-flex" style="gap: 5px">
                                             @foreach ($product->productColors as $colorItem)
                                                 <li>
-                                                    <a class="colorSelectionLabel w-100" style="background-color:{{$colorItem->color->code}}; text-align:center;" wire:click="colorSelected({{ $colorItem->id }})">
-                                                        {{$colorItem->color->code}}
+                                                    <a class="colorSelectionLabel w-100" style="background-color:{{$colorItem->color->code}}; text-align:center; border: none;" wire:click="colorSelected({{ $colorItem->id }})">
+                                                        {{-- {{$colorItem->color->code}} --}}
                                                     </a>
                                                 </li>
 
@@ -71,9 +71,9 @@
                                     @endif
 
                                     @if ($this->prodColorSelectedQuantity == 'outOfStock')
-                                        <label class="btn py-1 mt-2 text-white bg-danger">Out of Stock</label>
+                                        <label class="btn py-1 mt-1 text-white bg-danger">Out of Stock</label>
                                     @elseif ($this->prodColorSelectedQuantity > 0)
-                                        <label class="btn py-1 mt-2 text-white bg-success">In Stock</label>
+                                        <label class="btn py-1 mt-1 text-white bg-success">In Stock</label>
                                     @endif
 
                                 @else
@@ -101,9 +101,11 @@
                                 </li>
                             </ul>
 
-                            <div class="product-action" wire:ignore>
-                                <div class="product-single-qty">
-                                    <input class="horizontal-quantity form-control" type="text">
+                            <div class="product-action d-flex" style="gap: 20px !important;">
+                                <div class="input-groupCount">
+                                    <span class="btn btn1 quantitybtn" wire:click="decrementQuantity"><i class="fa fa-minus" style="color: black;"></i></span>
+                                    <input class="input-quantity quantitycount" wire:model="quantityCount" value="{{ $this->quantityCount }}" type="text" readonly>
+                                    <span class="btn btn1 quantitybtn" wire:click="incrementQuantity"><i class="fa fa-plus" style="color: black;"></i></span>
                                 </div>
 
                                 <a href="javascript:;" class="btn btn-dark add-cart mr-2" title="Add to Cart">Add to
@@ -126,7 +128,7 @@
                                 </div>
 
                                 <a href="#" wire:click="addToWishlist({{ $product->id }})" class="wishlist-btn" title="Add to Wishlist">
-                                    <span wire:loading.remove>
+                                    <span wire:loading.remove wire:target="addToWishlist">
                                         <i class="icon-wishlist-2"></i><span>Add to Wishlist</span>
                                     </span>
                                     <span wire:loading wire:target="addToWishlist">Adding ...</span>

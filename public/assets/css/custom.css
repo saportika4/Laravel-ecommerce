@@ -109,3 +109,62 @@
     font-size: 16px;
     border-radius: 4px;
 }
+
+
+.cart {
+    position: relative;
+    display: block;
+    width: 28px;
+    height: 28px;
+    height: auto;
+    overflow: hidden;
+    .material-icons {
+      position: relative;
+      top: 4px;
+      z-index: 1;
+      font-size: 24px;
+      color: white;
+    }
+    .count {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 2;
+      font-size: 11px;
+      border-radius: 50%;
+      background: #d60b28;
+      width: 16px;
+      height: 16px;
+      line-height:16px;
+      display: block;
+      text-align: center;
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      font-weight: bold;
+    }
+  }
+
+  .quantitycount{
+    width: 50px;
+    text-align: center !important;
+    border: 1px solid #000 !important;
+  }
+
+  .quantitybtn{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px;
+    text-align: center !important;
+    border: 1px solid #000 !important;
+  }
+
+  .input-groupCount{
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }

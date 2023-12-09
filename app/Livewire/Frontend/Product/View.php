@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class View extends Component
 {
-    public $category, $product, $prodColorSelectedQuantity;
+    public $category, $product, $prodColorSelectedQuantity, $quantityCount = 1;
 
     public function addToWishlist($ProductId)
     {
@@ -28,6 +28,8 @@ class View extends Component
                     'user_id' => auth()->user()->id,
                     'product_id' => $ProductId
                 ]);
+
+                $this->dispatch('WishlistUpdated');
 
                 session()->flash('message','Product added To Wishlist');
 
@@ -51,6 +53,20 @@ class View extends Component
 
         if($this->prodColorSelectedQuantity == 0){
             $this->prodColorSelectedQuantity = 'outOfStock';
+        }
+    }
+
+    public function incrementQuantity()
+    {
+        if($this->quantityCount < 10){
+            $this->quantityCount++;
+        }
+    }
+
+    public function decrementQuantity()
+    {
+        if($this->quantityCount > 1){
+            $this->quantityCount--;
         }
     }
 

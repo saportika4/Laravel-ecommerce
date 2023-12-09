@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
 @section('title','categories')
-{{-- {{ $categories->meta_title }}
-@endsection --}}
 
 @section('content')
 

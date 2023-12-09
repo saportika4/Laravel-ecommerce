@@ -74,7 +74,7 @@
                                 <ul>
                                     <li><a style="padding-left: 10px;" href="wishlist.html">Profile</a></li>
                                     <li><a style="padding-left: 10px;" href="cart.html">My Orders</a></li>
-                                    <li><a style="padding-left: 10px;" href="checkout.html">Wishlist</a></li>
+                                    <li><a style="padding-left: 10px;" href="{{ url('wishList') }}">Wishlist</a></li>
                                     <li><a style="padding-left: 10px;" href="dashboard.html">Cart</a></li>
                                     <li>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
@@ -93,7 +93,10 @@
                         </div>
                     @endguest
 
-                    <a href="wishlist.html" class="header-icon" title="wishlist"><i class="icon-wishlist-2"></i></a>
+                    <a href="{{ url('wishList') }}" class="header-icon cart" title="wishlist">
+                        <i class="icon-wishlist-2"></i>
+                        <span class="cart-count badge-circle count"><livewire:frontend.wishlist-count /></span>
+                    </a>
 
                     <div class="dropdown cart-dropdown">
                         <a href="#" title="Cart" class="dropdown-toggle dropdown-arrow cart-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
