@@ -79,7 +79,7 @@ class View extends Component
             if($this->product->where('id',$productId)->where('status','0')->exists())
             {
                 // check for product color quantity and insert to cart
-                if($this->product->productColors()->count() > 0)
+                if($this->product->productColors()->count() >= 1)
                 {
 
                     if($this->prodColorSelectedQuantity != NULL)
@@ -100,7 +100,7 @@ class View extends Component
                                 if($productColor->quantity > 0)
                                 {
 
-                                    if($productColor->quantity > $this->quantityCount)
+                                    if($productColor->quantity >= $this->quantityCount)
                                     {
                                         //insert product to cart with color
 

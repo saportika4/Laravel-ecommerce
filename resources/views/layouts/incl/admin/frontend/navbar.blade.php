@@ -73,14 +73,14 @@
                             font-size: 14px;">
                                 <ul>
                                     <li><a style="padding-left: 10px;" href="wishlist.html">Profile</a></li>
-                                    <li><a style="padding-left: 10px;" href="cart.html">My Orders</a></li>
+                                    <li><a style="padding-left: 10px;" href="{{ url('orders') }}">My Orders</a></li>
                                     <li><a style="padding-left: 10px;" href="{{ url('wishList') }}">Wishlist</a></li>
-                                    <li><a style="padding-left: 10px;" href="dashboard.html">Cart</a></li>
+                                    <li><a style="padding-left: 10px;" href="{{ url('cart') }}">Cart</a></li>
                                     <li>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
-                                            <i class="fa fa-sign-out" aria-hidden="true" style="padding-right: 10px;"></i>{{ __('Logout') }}
+                                            <i class="fa fa-sign-out" style="padding-right: 10px;"></i>{{ __('Logout') }}
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -99,7 +99,7 @@
                     </a>
 
                     <div class="dropdown cart-dropdown">
-                        <a href="#" title="Cart" class="dropdown-toggle dropdown-arrow cart-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+                        <a href="{{ url('cart') }}" title="Cart" class="dropdown-toggle" role="button">
                             <i class="minicart-icon"></i>
                             <span class="cart-count badge-circle" style="background: #cb1919;"><livewire:frontend.cart.cart-count /></span>
                         </a>

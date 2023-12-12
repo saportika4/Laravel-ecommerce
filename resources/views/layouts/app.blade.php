@@ -31,7 +31,7 @@
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ url('assets/css/style.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/fontawesome-free/css/all.min.css') }}">
+    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/fontawesome-free/css/all.min.css') }}"> --}}
 
     <!-- CSS -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
@@ -63,6 +63,7 @@
     <script src="{{ asset('assets/js/jquery.appear.min.js') }}"></script>
 
     <script src="{{ asset('assets/js/nouislider.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Main JS File -->
     <script src="{{ asset('assets/js/main.min.js') }}"></script>
@@ -72,12 +73,15 @@
 
     <script>
         window.addEventListener('message', event => {
-            alertify.set('notifier','position', 'top-right');
-            alertify.notify(event.detail.text, event.detail.type);
+            if(event.detail){
+                alertify.set('notifier','position', 'top-bottom');
+                alertify.notify(event.detail.text, event.detail.type);
+            }
         });
 
     </script>
 
     @livewireScripts
+    @stack('scripts')
 </body>
 </html>

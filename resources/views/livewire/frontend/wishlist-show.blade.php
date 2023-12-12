@@ -23,15 +23,15 @@
             </div>
             <div class="wishlist-table-container">
                 <table class="table table-wishlist mb-0">
-                    {{-- <thead>
+                    <thead>
                         <tr>
                             <th class="thumbnail-col"></th>
                             <th class="product-col">Product</th>
                             <th class="price-col">Price</th>
                             <th class="status-col">Stock Status</th>
-                            <th class="action-col">Actions</th>
+                            <th class="action-col text-center">Actions</th>
                         </tr>
-                    </thead> --}}
+                    </thead>
                     <tbody>
                         @forelse ($wishlist as $wishlistItem)
                             @if ($wishlistItem->product)
@@ -71,7 +71,8 @@
                                                     <i class="fa fa-trash"></i> Removing...
                                                 </span>
                                             </button>
-                                            <button class="btn btn-dark btn-add-cart product-type-simple btn-shop">
+
+                                            <button type="button" class="btn btn-dark">
                                                 <i class="minicart-icon" style="background: white;border: #ffffff;"></i> ADD TO CART
                                             </button>
                                         </div>
