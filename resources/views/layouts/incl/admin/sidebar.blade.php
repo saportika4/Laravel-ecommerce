@@ -17,6 +17,15 @@
                                 </li>
                             </ul>
                         </li>
+
+                        <li>
+                            <a href="{{ url('admin/orders') }}" class="text-decoration-none {{ (request()->is('admin/orders')) ? 'active' : '' }}">
+                                <span data-feather="layout" class="nav-icon"></span>
+                                <span class="menu-text">Orders</span>
+                            </a>
+
+                        </li>
+
                         <li class="has-child {{ (request()->is('admin/category')) ? 'open' : '' }}">
                             <a href="#" class="text-decoration-none {{ (request()->is('admin/category')) ? 'active' : '' }}">
                                 <span data-feather="layout" class="nav-icon"></span>
