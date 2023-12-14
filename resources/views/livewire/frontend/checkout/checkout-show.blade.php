@@ -145,12 +145,15 @@
                                         <h6>Cash on Delivery Mode</h6>
                                         <hr style="margin-top: 2rem; margin-bottom: 1.7rem;" />
                                         <button type="button" wire:loading.attr="disabled" wire:click="codOrder" class="btn btn-primary">
-                                            <span wire:loading.remove wire:target="codOrder">
+                                            <span>
+                                                Place Order
+                                            </span>
+                                            {{-- <span wire:loading.remove wire:target="codOrder">
                                                 Place Order
                                             </span>
                                             <span wire:loading wire:target="codOrder">
                                                 Placing Order
-                                            </span>
+                                            </span> --}}
                                         </button>
 
                                     </div>

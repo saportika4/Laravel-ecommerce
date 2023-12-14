@@ -5,7 +5,7 @@
             <div class="col-lg-9 main-content">
                 <nav class="toolbox sticky-header" data-sticky-options="{'mobile': true}">
                     <div class="toolbox-left">
-                        <a href="#" class="sidebar-toggle">
+                        <a href="" class="sidebar-toggle">
                             <svg data-name="Layer 3" id="Layer_3" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                                 <line x1="15" x2="26" y1="9" y2="9" class="cls-1"></line>
                                 <line x1="6" x2="9" y1="9" y2="9" class="cls-1"></line>
@@ -80,16 +80,15 @@
                                         <a href="#" wire:click="addToWishlist({{ $productsItems->id }})" class="btn-icon-wish" title="wishlist">
                                             <i class="icon-heart"></i>
                                         </a>
-                                        <a href="#" class="btn-icon btn-add-cart product-type-simple"><i
-                                                class="icon-shopping-cart"></i>ADD TO CART</a>
-                                        {{-- <a href="" class="btn-quickview" title="Quick View"><i class="fas fa-external-link-alt"></i></a> --}}
+
+                                        <a href="{{ url('/collections/'.$productsItems->category->slug.'/'.$productsItems->slug) }}" class="btn-icon btn-add-cart"><i class="icon-shopping-cart"></i>View</a>
                                     </div>
                                 </div>
                                 <!-- End .product-details -->
                             </div>
                         </div>
                     @empty
-                        <div class="col-md-5" wire:key="item-{{ $productsItems->id }}">
+                        <div class="col-md-5">
                             <h5>No Products Available for {{ $category->name }}</h5>
                         </div>
                     @endforelse

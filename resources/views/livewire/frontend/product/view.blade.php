@@ -21,13 +21,18 @@
                         <div class="col-lg-5 col-md-6 product-single-gallery" wire:ignore>
                             <div class="product-slider-container">
                                 <div class="product-single-carousel owl-carousel owl-theme show-nav-hover">
-                                    <div class="product-item">
-                                        @if($product->productImages)
-                                            <img class="product-single-image" src="{{ asset($product->productImages[0]->image) }}" data-zoom-image="{{ asset($product->productImages[0]->image) }}" width="468" height="468" alt="product" />
-                                        @else
-                                            <h4>No Image</h4>
-                                        @endif
-                                    </div>
+
+                                    @foreach ($product->productImages as $ItemImage)
+                                        <div class="product-item">
+                                            @if($product->productImages)
+                                                <img class="product-single-image" src="{{ asset($ItemImage->image) }}" data-zoom-image="{{ asset($ItemImage->image) }}" width="468" height="468" style="max-height: 468px;
+                                                min-height: 468px;
+                                                object-fit: cover;" alt="product" />
+                                            @else
+                                                <h4>No Image</h4>
+                                            @endif
+                                        </div>
+                                    @endforeach
                                 </div>
                                 <span class="prod-full-screen">
                                     <i class="icon-plus"></i>
@@ -35,13 +40,19 @@
                             </div>
 
                             <div class="prod-thumbnail owl-dots">
-                                <div class="owl-dot">
                                     @if($product->productImages)
-                                        <img src="{{ asset($product->productImages[0]->image) }}" width="110" height="110" alt="product-thumbnail" />
+
+                                        @foreach ($product->productImages as $ItemImage)
+                                            <div class="owl-dot">
+                                                <img src="{{ asset($ItemImage->image) }}" width="110" height="110" alt="product-thumbnail" style="max-height: 110px;
+                                                min-height: 110px;
+                                                object-fit: cover;" />
+                                            </div>
+                                        @endforeach
+
                                     @else
                                         <h4>No Image</h4>
                                     @endif
-                                </div>
                             </div>
                         </div>
 
@@ -85,16 +96,16 @@
                                 @endif
                             </div>
 
-                            <div class="product-desc">
+                            <div class="product-desc mt-2">
                                 <p>
                                     {{ $product->small_description }}
                                 </p>
                             </div>
 
                             <ul class="single-info-list">
-                                <li>
+                                {{-- <li>
                                     Quantity: <strong>{{ $product->quantity }}</strong>
-                                </li>
+                                </li> --}}
 
                                 <li>
                                     CATEGORY: <strong><a href="#" class="product-category">{{ $product->category->name }}</a></strong>
@@ -116,7 +127,7 @@
                             <hr class="divider mb-0 mt-0">
 
                             <div class="product-single-share mb-3">
-                                <label class="sr-only">Share:</label>
+                                {{-- <label class="sr-only">Share:</label>
 
                                 <div class="social-icons mr-2">
                                     <a href="#" class="social-icon social-facebook icon-facebook" target="_blank" title="Facebook"></a>
@@ -124,7 +135,7 @@
                                     <a href="#" class="social-icon social-linkedin fab fa-linkedin-in" target="_blank" title="Linkedin"></a>
                                     <a href="#" class="social-icon social-gplus fab fa-google-plus-g" target="_blank" title="Google +"></a>
                                     <a href="#" class="social-icon social-mail icon-mail-alt" target="_blank" title="Mail"></a>
-                                </div>
+                                </div> --}}
 
                                 <a href="#" wire:click="addToWishlist({{ $product->id }})" class="wishlist-btn" title="Add to Wishlist">
                                     <span wire:loading.remove wire:target="addToWishlist">
@@ -142,3 +153,4 @@
         </main>
 
 </div>
+

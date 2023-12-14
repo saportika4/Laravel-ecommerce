@@ -60,8 +60,8 @@
                                         @endif
 
                                     </td>
-                                    <td class="action">
-                                        <div class="d-flex"  style="gap: 10px;">
+                                    <td class="action text-center">
+                                        <div class="">
                                             <button type="button" wire:click="RemoveWishListItem({{ $wishlistItem->id }})" class="btn btn-danger mt-1 mt-md-0" title="Quick View">
                                                 <span wire:loading.remove wire:target="RemoveWishListItem({{ $wishlistItem->id }})">
                                                     <i class="fa fa-trash"></i> Remove
@@ -72,9 +72,9 @@
                                                 </span>
                                             </button>
 
-                                            <button type="button" class="btn btn-dark">
+                                            {{-- <button type="button" class="btn btn-dark">
                                                 <i class="minicart-icon" style="background: white;border: #ffffff;"></i> ADD TO CART
-                                            </button>
+                                            </button> --}}
                                         </div>
                                     </td>
                                 </tr>

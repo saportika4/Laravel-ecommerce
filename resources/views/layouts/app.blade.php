@@ -28,10 +28,10 @@
     <link rel="stylesheet" href="{{ asset('assets/css/demo4.min.css') }}">
 
     <!-- Styles -->
-    <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('admin/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ url('assets/css/style.min.css') }}">
-    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/fontawesome-free/css/all.min.css') }}"> --}}
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/fontawesome-free/css/all.min.css') }}">
 
     <!-- CSS -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
@@ -39,6 +39,7 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
 
     @livewireStyles
+    @stack('styles')
 </head>
 <body>
     <div id="app">
@@ -57,7 +58,7 @@
     <!-- Plugins JS File -->
     {{-- <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script> --}}
     <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('admin/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('assets/js/optional/isotope.pkgd.min.js') }}"></script>
     <script src="{{ asset('assets/js/plugins.min.js') }}"></script>
     <script src="{{ asset('assets/js/jquery.appear.min.js') }}"></script>
@@ -80,6 +81,8 @@
         });
 
     </script>
+
+    <script src="{{ asset('assets/ex-zoom/jquery.exzoom.js') }}"></script>
 
     @livewireScripts
     @stack('scripts')

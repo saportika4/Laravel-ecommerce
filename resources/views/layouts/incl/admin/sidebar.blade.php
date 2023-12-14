@@ -5,17 +5,13 @@
                         <li class="menu-title">
                             <span>Main menu</span>
                         </li>
-                        <li class="has-child {{ (request()->is('admin/dashboard')) ? 'open' : '' }}">
-                            <a href="#" class="text-decoration-none {{ (request()->is('admin/dashboard')) ? 'active' : '' }}">
-                                <span data-feather="home" class="nav-icon"></span>
+
+                        <li>
+                            <a href="{{ url('admin/dashboard') }}" class="text-decoration-none {{ (request()->is('admin/dashboard')) ? 'active' : '' }}">
+                                <span data-feather="layout" class="nav-icon"></span>
                                 <span class="menu-text">Dashboard</span>
-                                <span class="toggle-icon"></span>
                             </a>
-                            <ul>
-                                <li>
-                                    <a href="{{ url('admin/dashboard') }}" class="text-decoration-none {{ (request()->is('admin/dashboard')) ? 'active' : '' }}">Dashboard</a>
-                                </li>
-                            </ul>
+
                         </li>
 
                         <li>
@@ -82,6 +78,22 @@
                                 <span class="menu-text">Sliders</span>
                             </a>
 
+                        </li>
+
+                        <li class="has-child {{ (request()->is('admin/users*')) ? 'open' : '' }}">
+                            <a href="#" class="text-decoration-none {{ (request()->is('admin/users*')) ? 'active' : '' }}">
+                                <span data-feather="shopping-cart" class="nav-icon"></span>
+                                <span class="menu-text">Users</span>
+                                <span class="toggle-icon"></span>
+                            </a>
+                            <ul>
+                                <li class="l_sidebar">
+                                    <a href="{{ url('admin/users/create') }}" class="text-decoration-none {{ (request()->is('admin/users/create')) ? 'active' : '' }}">Add User</a>
+                                </li>
+                                <li class="l_sidebar">
+                                    <a href="{{ url('admin/users') }}" class="text-decoration-none {{ (request()->is('admin/users')) ? 'active' : '' }}">View Users</a>
+                                </li>
+                            </ul>
                         </li>
 
                     </ul>

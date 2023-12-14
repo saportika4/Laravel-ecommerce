@@ -24,7 +24,7 @@
                                 <h6>Tracking Id/No: {{ $order->tracking_no }}</h6>
                                 <h6>Ordered Date: {{ $order->created_at->format('d-m-Y h:i A') }}</h6>
                                 <h6>Payment Mode: {{ $order->payment_mode }}</h6>
-                                <h6 class="border p-3 text-warning d-inline">
+                                <h6 class="border p-3 d-inline {{ $order->status_message == 'completed' ? 'text-success':'text-warning' }}">
                                     Order Status Message: <span class="text-uppercase">{{ $order->status_message }}</span>
                                 </h6>
                             </div>

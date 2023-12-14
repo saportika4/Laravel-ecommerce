@@ -15,11 +15,13 @@
                 <div class="card-header">
                     <h2 class="w-100">
                         <i class="fa fa-shopping-cart text-dark"></i> My Order Details
-                        <a href="{{ url('admin/orders') }}" class="btn btn-danger btn-sm mx-1" style="float: inline-end;">Back</a>
+                        <a href="{{ url('admin/orders') }}" class="btn btn-danger btn-sm mx-1" style="float: inline-end;"><span class="fa fa-arrow-left text-white" style="margin-left: 0;"></span>Back</a>
 
-                        <a href="{{ url('admin/invoice/'.$order->id.'/generate') }}" class="btn btn-primary btn-sm mx-1" style="float: inline-end;">Download Invoice</a>
+                        <a href="{{ url('admin/invoice/'.$order->id.'/generate') }}" class="btn btn-primary btn-sm mx-1" style="float: inline-end;"><span class="fa fa-download text-white" style="margin-left: 0;"></span>Download Invoice</a>
 
-                        <a href="{{ url('admin/invoice/'.$order->id) }}" target="_blank" class="btn btn-warning btn-sm mx-1" style="float: inline-end;">View Invoice</a>
+                        <a href="{{ url('admin/invoice/'.$order->id) }}" target="_blank" class="btn btn-warning btn-sm mx-1" style="float: inline-end;"><span class="fa fa-eye text-white" style="margin-left: 0;"></span>View Invoice</a>
+
+                        <a href="{{ url('admin/invoice/'.$order->id.'/mail') }}" class="btn btn-info btn-sm mx-1" style="float: inline-end;"><span class="fa fa-arrow-right text-white" style="margin-left: 0;"></span>Send Invoice Via mail</a>
                     </h2>
                 </div>
                 <div class="card-body">
